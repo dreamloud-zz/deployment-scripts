@@ -145,4 +145,4 @@ grunt
 #create database slr_local;
 #create user 'slr'@'localhost' identified by 'YourPassword!';
 #grant all on slr_local.* to 'slr'@'localhost' identified by 'YourPassword!';
-#mysql -u slr -p slr_local <slr_local.sql 
+#mysql -u slr -p slr_local <slr_local.sql
