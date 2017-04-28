@@ -1,14 +1,26 @@
 # Mac OSX Install Magento Developer Edition
 # https://magento.com/tech-resources/download
+xcode-select --install
 cd /var/www/html/
 tar -xvf Magento-CE-2.1.6-2017-03-29-01-08-05.tar.gz ./magento
+
+brew upgrade
 brew tap homebrew/dupes
 brew tap homebrew/versions
 brew tap homebrew/homebrew-php
 #brew remove php55-mcrypt
 #brew uninstall --force php55
-brew install php56 php56-mcrypt php56-intl
+brew install php56 --with-homebrew-curl --with-mssql --with-httpd24
+brew install php56-mcrypt php56-intl php56-opcache 
+
 cd magento
 composer install
 chmod -R 0755 .
 chmod -R 0777 var
+chmod -R 0777 app/etc
+chmod -R 0777 pub/media
+chmod -R 0777 pub/static
+
+# As a user with root privileges, open php.ini in a text editor.
+# Uncomment the following line:
+# always_populate_raw_post_data = -1
