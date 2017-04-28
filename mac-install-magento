@@ -24,3 +24,5 @@ chmod -R 0777 pub/static
 # As a user with root privileges, open php.ini in a text editor.
 # Uncomment the following line:
 # always_populate_raw_post_data = -1
+
+# When Magento installer prompts, may need to set db host to 127.0.0.1
